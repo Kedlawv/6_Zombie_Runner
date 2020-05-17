@@ -12,6 +12,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] ParticleSystem muzzleFlashVFX;
     [SerializeField] GameObject hitEffect;
     [SerializeField] Ammo ammoSlot;
+    [SerializeField] AmmoType ammoType;
     [SerializeField] float timeBetweenShots = 0.5f;
 
     bool canShoot = true;
@@ -33,11 +34,11 @@ public class Weapon : MonoBehaviour
     {
         canShoot = false;
 
-        if (ammoSlot.getCurrentAmmo() > 0)
+        if (ammoSlot.getCurrentAmmo(this.ammoType) > 0)
         {
             playMuzzleFlash();
             processRaycast();
-            ammoSlot.reduceCurrentAmmo();
+            ammoSlot.reduceCurrentAmmo(this.ammoType);
         }
         yield return new WaitForSeconds(timeBetweenShots);
         
