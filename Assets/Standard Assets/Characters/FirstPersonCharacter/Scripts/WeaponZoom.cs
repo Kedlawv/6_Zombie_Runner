@@ -35,7 +35,7 @@ public class WeaponZoom : MonoBehaviour
     {
         cameraFPS.fieldOfView = zoomedOutFOV;
         firstPersonController.mouseLook.XSensitivity = zoomedOutSensitivity;
-        firstPersonController.mouseLook.YSensitivity = zoomedInSensitivity;
+        firstPersonController.mouseLook.YSensitivity = zoomedOutSensitivity;
     }
 
     private void zoomIn()

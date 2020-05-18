@@ -16,7 +16,8 @@ public class EnemyAI : MonoBehaviour
     bool isProvoked = false;
     Renderer enemyRenderer;
     Animator animator;
-    
+    Enemy_Health enemyHealth;
+
 
     // Start is called before the first frame update
 
@@ -26,14 +27,22 @@ public class EnemyAI : MonoBehaviour
         enemyRenderer = this.GetComponent<Renderer>();
         animator = this.GetComponent<Animator>();
         target = FindObjectOfType<PlayerHealth>().GetComponent<Transform>();
+        enemyHealth = this.GetComponent<Enemy_Health>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (enemyHealth.IsDead())
+        {
+            navMeshAgent.enabled = false;
+            this.enabled = false;
+            isProvoked = false;
+        }
+
         distanceToTarget = Vector3.Distance(target.position, this.transform.position);
-        
         if (isProvoked)
         {
             engageEnemy();
@@ -42,6 +51,7 @@ public class EnemyAI : MonoBehaviour
         {
             isProvoked = true;
         }
+
     }
 
     public void onDamageTaken()
@@ -58,7 +68,7 @@ public class EnemyAI : MonoBehaviour
             animator.SetBool("attack", false);
             chase();
         }
-        else if(distanceToTarget <= navMeshAgent.stoppingDistance)
+        else if (distanceToTarget <= navMeshAgent.stoppingDistance)
         {
             attack();
         }
@@ -84,6 +94,8 @@ public class EnemyAI : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         this.transform.rotation = Quaternion.Slerp(this.transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
     }
+
+
 
     private void OnDrawGizmosSelected()
     {

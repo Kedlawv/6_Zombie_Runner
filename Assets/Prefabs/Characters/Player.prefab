@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a6759b9b14374d4f8963f1177ba68b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmount: 10
+  ammoSlots: []
 --- !u!1 &405935357
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb6e395ab2f79d4d9d370223350f343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentWeapon: 0
 --- !u!114 &1566226803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,6 +408,7 @@ MonoBehaviour:
   hitEffect: {fileID: 8933883719750644050, guid: 7a45e1c9565c136499fa6a0dba0e9022,
     type: 3}
   ammoSlot: {fileID: 1774855638}
+  ammoType: 0
   timeBetweenShots: 0.5
 --- !u!1001 &3214983
 PrefabInstance:
@@ -505,6 +507,11 @@ PrefabInstance:
       propertyPath: firstPersonController
       value: 
       objectReference: {fileID: 11400004}
+    - target: {fileID: 8097502201155432715, guid: ada2587319194f542957a8c2ae277cb9,
+        type: 3}
+      propertyPath: FPCamera
+      value: 
+      objectReference: {fileID: 2000000}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
 --- !u!1 &2337074159000278273 stripped
