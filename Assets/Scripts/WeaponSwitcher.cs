@@ -26,7 +26,6 @@ public class WeaponSwitcher : MonoBehaviour
 
     private void processScrollWheel()
     {
-        Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
 
         if(Input.GetAxis("Mouse ScrollWheel") > 0)
         {
