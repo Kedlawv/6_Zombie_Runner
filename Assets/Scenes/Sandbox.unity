@@ -739,6 +739,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_TargetDisplay: 0
+--- !u!114 &327717811 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1774855638, guid: c6453f8e1f814744d8b94e5a6d1f9942,
+    type: 3}
+  m_PrefabInstance: {fileID: 444879279}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a6759b9b14374d4f8963f1177ba68b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &444879279
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -858,6 +870,17 @@ PrefabInstance:
       propertyPath: damage
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 8097502201156550540, guid: c6453f8e1f814744d8b94e5a6d1f9942,
+        type: 3}
+      propertyPath: ammoSlot
+      value: 
+      objectReference: {fileID: 327717811}
+    - target: {fileID: 8097502201156550540, guid: c6453f8e1f814744d8b94e5a6d1f9942,
+        type: 3}
+      propertyPath: hitEffect
+      value: 
+      objectReference: {fileID: 8933883719750644050, guid: 7a45e1c9565c136499fa6a0dba0e9022,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
 --- !u!1 &452983384
