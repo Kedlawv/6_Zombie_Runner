@@ -7,7 +7,6 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] Transform target;
     [SerializeField] float chaseRange = 5f;
     [SerializeField] float rotationSpeed = 5f;
 
@@ -17,6 +16,7 @@ public class EnemyAI : MonoBehaviour
     Renderer enemyRenderer;
     Animator animator;
     Enemy_Health enemyHealth;
+    Transform target;
 
 
     // Start is called before the first frame update
@@ -26,7 +26,7 @@ public class EnemyAI : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         enemyRenderer = this.GetComponent<Renderer>();
         animator = this.GetComponent<Animator>();
-        target = FindObjectOfType<PlayerHealth>().GetComponent<Transform>();
+        target = FindObjectOfType<PlayerHealth>().transform;
         enemyHealth = this.GetComponent<Enemy_Health>();
 
     }
@@ -82,10 +82,8 @@ public class EnemyAI : MonoBehaviour
     }
 
     private void attack()
-    {
-        Debug.Log(this.name + " is attacking " + target.name);
+    { 
         animator.SetBool("attack", true);
-        enemyRenderer.material.SetColor("_Color", Color.red);
     }
 
     private void faceTarget()
