@@ -26,4 +26,9 @@ public class FlashlightSystem : MonoBehaviour
             myLight.intensity -= lightDecay * Time.deltaTime;
         }
     }
+
+    public void RestoreIntensity(float intensityAmount)
+    {
+        myLight.intensity += intensityAmount;
+    }
 }
